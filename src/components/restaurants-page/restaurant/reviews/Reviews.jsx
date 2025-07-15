@@ -1,10 +1,10 @@
 import { Review } from "./review/Review";
 
-export const Reviews = ({ restaurant }) => {
+export const Reviews = ({ reviews }) => {
   return (
     <ul>
-      {restaurant.reviews.map((review) => (
-        <Review review={review} />
+      {reviews.map((review) => (
+        <Review key={review.id} review={review} />
       ))}
     </ul>
   );

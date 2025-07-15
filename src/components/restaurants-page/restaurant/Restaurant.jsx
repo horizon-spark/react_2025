@@ -6,9 +6,15 @@ export const Restaurant = ({ restaurant }) => {
     <div>
       <h2>{restaurant.name}</h2>
       <h3>Меню</h3>
-      <Menu restaurant={restaurant} />
-      <h3>Отзывы</h3>
-      <Reviews restaurant={restaurant} />
+      <Menu menu={restaurant.menu} />
+      {restaurant.reviews.length ? (
+        <>
+          <h3>Отзывы</h3>
+          <Reviews reviews={restaurant.reviews} />
+        </>
+      ) : (
+        <div>Нет отзывов</div>
+      )}
     </div>
   );
 };

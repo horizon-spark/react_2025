@@ -1,10 +1,10 @@
 import { Dish } from "./dish/Dish";
 
-export const Menu = ({ restaurant }) => {
+export const Menu = ({ menu }) => {
   return (
     <ul>
-      {restaurant.menu.map((dish) => (
-        <Dish dish={dish} />
+      {menu.map((dish) => (
+        <Dish key={dish.id} dish={dish} />
       ))}
     </ul>
   );
