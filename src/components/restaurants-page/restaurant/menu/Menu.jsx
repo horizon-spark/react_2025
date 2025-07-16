@@ -1,10 +1,10 @@
-import { Dish } from "./dish/Dish";
+import { DishListItem } from "./dish/DishListItem";
 
 export const Menu = ({ menu }) => {
   return (
     <ul>
       {menu.map((dish) => (
-        <Dish key={dish.id} dish={dish} />
+        <DishListItem key={dish.id} dish={dish} />
       ))}
     </ul>
   );

@@ -28,9 +28,7 @@ export const RestaurantsPage = ({ restaurants, title }) => {
             onClick={() => handleActiveRestaurantClick(id)}
             isActive={id === activeRestaurantId}
           />
-        ) : (
-          <></>
-        )
+        ) : null
       )}
       <Restaurant restaurant={activeRestaurant} />
     </div>
