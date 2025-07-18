@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Tab } from "./tab/Tab";
 import { Restaurant } from "./restaurant/Restaurant";
+import { ProgressBar } from "./progress-bar/ProgressBar";
 
 export const RestaurantsPage = ({ restaurants, title }) => {
   const [activeRestaurantId, setActiveRestaurantId] = useState(
@@ -19,6 +20,7 @@ export const RestaurantsPage = ({ restaurants, title }) => {
 
   return (
     <div>
+      <ProgressBar />
       <h1>{title}</h1>
       {restaurants.map(({ name, id, menu }) =>
         menu.length ? (

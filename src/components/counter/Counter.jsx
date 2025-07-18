@@ -1,14 +1,4 @@
-import { useState } from "react";
-
-const MIN = 0;
-const MAX = 5;
-
-export const Counter = () => {
-  const [value, setValue] = useState(0);
-
-  const increment = () => setValue(value + 1);
-  const decrement = () => setValue(value - 1);
-
+export const Counter = ({ value, increment, decrement, MIN, MAX }) => {
   return (
     <div>
       <button onClick={decrement} disabled={value === MIN}>
