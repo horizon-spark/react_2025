@@ -1,7 +1,10 @@
 import { Layout } from "../layout/layout";
 import { RestaurantsPage } from "../restaurants-page/RestaurantsPage";
+import { restaurants } from "../../constants/mock";
 
-export const App = ({ restaurants, title }) => {
+const title = "Restaurant App";
+
+export const App = () => {
   return (
     <Layout>
       <RestaurantsPage restaurants={restaurants} title={title} />

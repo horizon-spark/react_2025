@@ -1,5 +1,6 @@
 import { Menu } from "./menu/Menu";
 import { Reviews } from "./reviews/reviews";
+import { ReviewForm } from "./review-form/ReviewForm";
 
 export const Restaurant = ({ restaurant }) => {
   return (
@@ -15,6 +16,7 @@ export const Restaurant = ({ restaurant }) => {
       ) : (
         <div>Нет отзывов</div>
       )}
+      <ReviewForm key={restaurant.id} />
     </div>
   );
 };
