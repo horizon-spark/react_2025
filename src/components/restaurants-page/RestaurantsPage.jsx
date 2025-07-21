@@ -3,6 +3,8 @@ import { Tab } from "./tab/Tab";
 import { Restaurant } from "./restaurant/Restaurant";
 import { ProgressBar } from "./progress-bar/ProgressBar";
 
+import styles from "./RestaurantPage.module.css";
+
 export const RestaurantsPage = ({ restaurants, title }) => {
   const [activeRestaurantId, setActiveRestaurantId] = useState(
     restaurants[0].id
@@ -21,18 +23,20 @@ export const RestaurantsPage = ({ restaurants, title }) => {
   return (
     <div>
       <ProgressBar />
-      <h1>{title}</h1>
-      {restaurants.map(({ name, id, menu }) =>
-        menu.length ? (
-          <Tab
-            key={id}
-            title={name}
-            onClick={() => handleActiveRestaurantClick(id)}
-            isActive={id === activeRestaurantId}
-          />
-        ) : null
-      )}
-      <Restaurant restaurant={activeRestaurant} />
+      <h1 className={styles.title}>{title}</h1>
+      <div className={styles.tabs}>
+        {restaurants.map(({ name, id, menu }) =>
+          menu.length ? (
+            <Tab
+              key={id}
+              title={name}
+              onClick={() => handleActiveRestaurantClick(id)}
+              isActive={id === activeRestaurantId}
+            />
+          ) : null
+        )}
+      </div>
+      <Restaurant key={activeRestaurant.id} restaurant={activeRestaurant} />
     </div>
   );
 };

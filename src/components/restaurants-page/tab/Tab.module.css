@@ -1,0 +1,15 @@
+.tab {
+  padding: 1rem;
+  margin: 0rem 1rem 3rem;
+  border-radius: 5px;
+  border: 0;
+  transition: 0.5s;
+  font-size: 1.7rem;
+}
+.tab:disabled {
+  outline: 1px solid black;
+}
+.tab:hover {
+  background-color: rgb(82, 184, 82);
+  outline: 1px solid black;
+}

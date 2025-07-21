@@ -1,6 +1,8 @@
+import styles from "./Tab.module.css";
+
 export const Tab = ({ title, onClick, isActive }) => {
   return (
-    <button onClick={onClick} disabled={isActive}>
+    <button className={styles.tab} onClick={onClick} disabled={isActive}>
       {title}
     </button>
   );

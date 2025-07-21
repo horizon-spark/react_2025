@@ -1,0 +1,9 @@
+.listItem {
+  padding-left: 0.6em;
+  margin: 1rem 0rem;
+  font-style: italic;
+  font-size: 1.5rem;
+}
+.listItem::marker {
+  content: "►";
+}

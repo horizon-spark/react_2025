@@ -11,7 +11,7 @@ export const ProgressBar = () => {
         top: 0,
         left: 0,
         height: "5px",
-        backgroundColor: "blue",
+        backgroundColor: "green",
       }}
     />
   );

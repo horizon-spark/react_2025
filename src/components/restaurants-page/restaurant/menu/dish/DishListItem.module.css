@@ -1,0 +1,15 @@
+.listElement {
+  padding-left: 0.6em;
+  margin: 1rem 0rem;
+}
+.listElement::marker {
+  content: "►";
+  font-size: 1.5rem;
+}
+.dishName {
+  float: left;
+  font-size: 1.5rem;
+}
+.dishCounter {
+  text-align: right;
+}
