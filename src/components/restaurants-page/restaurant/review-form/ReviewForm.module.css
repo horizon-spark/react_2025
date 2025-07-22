@@ -1,0 +1,40 @@
+.formHeader {
+  margin-bottom: 3rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+.reviewForm {
+  width: 50rem;
+  margin: auto;
+  margin-top: 5rem;
+  padding: 2rem 0rem;
+  border-top: 1px solid black;
+}
+.fieldTitle {
+  float: left;
+  width: 30%;
+  margin-right: 2%;
+  text-align: right;
+  font-size: 1.1rem;
+}
+.inputName {
+  width: 40%;
+  height: 1.4rem;
+  margin-bottom: 2%;
+  font-size: 0.9rem;
+}
+.inputReview {
+  width: 40%;
+  height: 4rem;
+  margin-bottom: 2%;
+  font-size: 1rem;
+}
+.clearButton {
+  text-align: right;
+  margin-left: 50%;
+  font-size: 0.9rem;
+  transition: 0.5s;
+}
+.clearButton:hover {
+  background-color: rgb(158, 39, 39);
+}

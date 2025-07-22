@@ -1,8 +1,11 @@
-import { Layout } from "../layout/layout";
+import { Layout } from "../layout/Layout";
 import { RestaurantsPage } from "../restaurants-page/RestaurantsPage";
 import { restaurants } from "../../constants/mock";
 
-const title = "Restaurant App";
+import "./reset.css";
+import "./app.css";
+
+const title = "Наши рестораны";
 
 export const App = () => {
   return (

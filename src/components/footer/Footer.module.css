@@ -1,0 +1,9 @@
+.footer {
+  background-color: rgb(78, 78, 78);
+  color: rgb(189, 189, 189);
+  text-align: center;
+  position: sticky;
+  bottom: 0;
+  padding-top: 0.5rem;
+  height: 1.5rem;
+}
