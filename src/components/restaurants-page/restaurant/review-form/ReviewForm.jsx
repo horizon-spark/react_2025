@@ -1,5 +1,7 @@
+import classNames from "classnames";
 import { Counter } from "../../../counter/Counter";
 import { useForm } from "./useForm";
+import { useTheme } from "../../../theme-context-provider/useTheme";
 
 import styles from "./ReviewForm.module.css";
 
@@ -17,6 +19,8 @@ export const ReviewForm = () => {
   } = useForm();
 
   const { name, text, rating } = form;
+
+  const { theme } = useTheme();
 
   return (
     <>
@@ -51,7 +55,13 @@ export const ReviewForm = () => {
           />
         </div>
         <div>
-          <button className={styles.clearButton} onClick={clearForm}>
+          <button
+            className={classNames(styles.clearButton, {
+              [styles.light]: theme === "light",
+              [styles.dark]: theme === "dark",
+            })}
+            onClick={clearForm}
+          >
             Очистить форму
           </button>
         </div>

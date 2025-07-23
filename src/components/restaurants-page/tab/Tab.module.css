@@ -13,3 +13,11 @@
   background-color: rgb(82, 184, 82);
   outline: 1px solid black;
 }
+.dark {
+  background-color: black;
+  color: beige;
+}
+.light {
+  background-color: beige;
+  color: black;
+}

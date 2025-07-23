@@ -3,8 +3,10 @@ import { Reviews } from "./reviews/reviews";
 import { ReviewForm } from "./review-form/ReviewForm";
 
 import styles from "./Restaurant.module.css";
+import { useAuthorization } from "../../user-context-provider/useAuthorization";
 
 export const Restaurant = ({ restaurant }) => {
+  const { isAuthorized } = useAuthorization();
   return (
     <div>
       <h2 className={styles.restaurantName}>{restaurant.name}</h2>
@@ -18,7 +20,7 @@ export const Restaurant = ({ restaurant }) => {
       ) : (
         <div className={styles.message}>Нет отзывов</div>
       )}
-      <ReviewForm />
+      {isAuthorized ? <ReviewForm /> : null}
     </div>
   );
 };
