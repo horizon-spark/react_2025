@@ -1,33 +1,30 @@
 import classNames from "classnames";
 import { useTheme } from "../theme-context-provider/useTheme";
+import { Button } from "../button/Button";
 
 import styles from "./Counter.module.css";
 
 export const Counter = ({ value, increment, decrement, MIN, MAX }) => {
   const { theme } = useTheme();
+  const buttonCssClasses = classNames(styles.button, {
+    [styles.light]: theme === "light",
+    [styles.dark]: theme === "dark",
+  });
   return (
     <div>
-      <button
-        className={classNames(styles.button, styles.decrement, {
-          [styles.light]: theme === "light",
-          [styles.dark]: theme === "dark",
-        })}
-        onClick={decrement}
-        disabled={value === MIN}
-      >
-        -
-      </button>
+      <Button
+        text="-"
+        onClickAction={decrement}
+        isDisabled={value === MIN}
+        externalCssClasses={classNames(buttonCssClasses, styles.decrement)}
+      />
       <span> {value} </span>
-      <button
-        className={classNames(styles.button, styles.increment, {
-          [styles.light]: theme === "light",
-          [styles.dark]: theme === "dark",
-        })}
-        onClick={increment}
-        disabled={value === MAX}
-      >
-        +
-      </button>
+      <Button
+        text="+"
+        onClickAction={increment}
+        isDisabled={value === MAX}
+        externalCssClasses={classNames(buttonCssClasses, styles.increment)}
+      />
     </div>
   );
 };

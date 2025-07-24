@@ -4,6 +4,7 @@ import { useForm } from "./useForm";
 import { useTheme } from "../../../theme-context-provider/useTheme";
 
 import styles from "./ReviewForm.module.css";
+import { Button } from "../../../button/Button";
 
 const MIN_REVIEW_RATE = 1;
 const MAX_REVIEW_RATE = 5;
@@ -55,15 +56,15 @@ export const ReviewForm = () => {
           />
         </div>
         <div>
-          <button
-            className={classNames(styles.clearButton, {
+          <Button
+            text="Очистить форму"
+            onClickAction={clearForm}
+            isDisabled={false}
+            externalCssClasses={classNames(styles.clearButton, {
               [styles.light]: theme === "light",
               [styles.dark]: theme === "dark",
             })}
-            onClick={clearForm}
-          >
-            Очистить форму
-          </button>
+          />
         </div>
       </form>
     </>
