@@ -1,24 +1,16 @@
-import { useState } from "react";
+import { Button } from "../../button/Button";
 import { useTheme } from "../../theme-context-provider/useTheme";
 
-import styles from "./ToggleThemeButton.module.css";
+import styles from "../Header.module.css";
 
 export const ToggleThemeButton = () => {
   const { theme, toggleTheme } = useTheme();
-  const [themeButtonText, setThemeButtonText] = useState(
-    theme === "light" ? "Темная тема" : "Светлая тема"
-  );
+
   return (
-    <button
-      className={styles.headerButton}
-      onClick={() => {
-        toggleTheme();
-        setThemeButtonText(
-          themeButtonText === "Светлая тема" ? "Темная тема" : "Светлая тема"
-        );
-      }}
-    >
-      {themeButtonText}
-    </button>
+    <Button
+      text={theme === "light" ? "Темная тема" : "Светлая тема"}
+      onClickAction={toggleTheme}
+      externalCssClasses={styles.headerButton}
+    />
   );
 };

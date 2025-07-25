@@ -1,19 +1,24 @@
+import { Button } from "../../button/Button";
 import { useAuthorization } from "../../user-context-provider/useAuthorization";
 
-import style from "./AuthorizationButton.module.css";
+import style from "../Header.module.css";
 
 export const AuthorizationButton = () => {
   const { isAuthorized, logIn, logOut } = useAuthorization();
   return isAuthorized ? (
     <>
-      <button className={style.headerButton}>Username</button>
-      <button className={style.headerButton} onClick={logOut}>
-        Выйти
-      </button>
+      <Button text={"Username"} externalCssClasses={style.headerButton} />
+      <Button
+        text={"Выйти"}
+        onClickAction={logOut}
+        externalCssClasses={style.headerButton}
+      />
     </>
   ) : (
-    <button className={style.headerButton} onClick={logIn}>
-      Войти
-    </button>
+    <Button
+      text={"Войти"}
+      onClickAction={logIn}
+      externalCssClasses={style.headerButton}
+    />
   );
 };

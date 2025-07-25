@@ -1,7 +1,5 @@
-import classNames from "classnames";
 import { Counter } from "../../../counter/Counter";
 import { useForm } from "./useForm";
-import { useTheme } from "../../../theme-context-provider/useTheme";
 
 import styles from "./ReviewForm.module.css";
 import { Button } from "../../../button/Button";
@@ -20,8 +18,6 @@ export const ReviewForm = () => {
   } = useForm();
 
   const { name, text, rating } = form;
-
-  const { theme } = useTheme();
 
   return (
     <>
@@ -59,11 +55,8 @@ export const ReviewForm = () => {
           <Button
             text="Очистить форму"
             onClickAction={clearForm}
-            isDisabled={false}
-            externalCssClasses={classNames(styles.clearButton, {
-              [styles.light]: theme === "light",
-              [styles.dark]: theme === "dark",
-            })}
+            externalCssClasses={styles.clearButton}
+            isHoverGreen={false}
           />
         </div>
       </form>
