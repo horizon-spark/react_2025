@@ -2,6 +2,7 @@ import { Counter } from "../../../counter/Counter";
 import { useForm } from "./useForm";
 
 import styles from "./ReviewForm.module.css";
+import { Button } from "../../../button/Button";
 
 const MIN_REVIEW_RATE = 1;
 const MAX_REVIEW_RATE = 5;
@@ -51,9 +52,12 @@ export const ReviewForm = () => {
           />
         </div>
         <div>
-          <button className={styles.clearButton} onClick={clearForm}>
-            Очистить форму
-          </button>
+          <Button
+            text="Очистить форму"
+            onClickAction={clearForm}
+            externalCssClasses={styles.clearButton}
+            isHoverGreen={false}
+          />
         </div>
       </form>
     </>

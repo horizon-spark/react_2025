@@ -1,0 +1,28 @@
+.buttonClass {
+  border: 0;
+  border-radius: 3px;
+  transition: 0.5s;
+}
+.buttonClass:hover {
+  outline: 1px solid black;
+}
+.light {
+  background-color: beige;
+  color: black;
+}
+.light:disabled {
+  background-color: gainsboro;
+}
+.dark {
+  background-color: black;
+  color: beige;
+}
+.dark:disabled {
+  background-color: rgb(87, 87, 87);
+}
+.greenHover:hover {
+  background-color: rgb(82, 184, 82);
+}
+.redHover:hover {
+  background-color: rgb(158, 39, 39);
+}

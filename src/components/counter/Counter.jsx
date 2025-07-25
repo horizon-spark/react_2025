@@ -1,23 +1,25 @@
+import classNames from "classnames";
+import { Button } from "../button/Button";
+
 import styles from "./Counter.module.css";
 
 export const Counter = ({ value, increment, decrement, MIN, MAX }) => {
   return (
     <div>
-      <button
-        className={styles.decrement}
-        onClick={decrement}
-        disabled={value === MIN}
-      >
-        -
-      </button>
+      <Button
+        text="-"
+        onClickAction={decrement}
+        isDisabled={value === MIN}
+        externalCssClasses={classNames(styles.button, styles.decrement)}
+        isHoverGreen={false}
+      />
       <span> {value} </span>
-      <button
-        className={styles.increment}
-        onClick={increment}
-        disabled={value === MAX}
-      >
-        +
-      </button>
+      <Button
+        text="+"
+        onClickAction={increment}
+        isDisabled={value === MAX}
+        externalCssClasses={classNames(styles.button, styles.increment)}
+      />
     </div>
   );
 };

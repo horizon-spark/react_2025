@@ -4,13 +4,19 @@ import { restaurants } from "../../constants/mock";
 
 import "./reset.css";
 import "./app.css";
+import { ThemeContextProvider } from "../theme-context-provider/ThemeContextProvider";
+import { UserContextProvider } from "../user-context-provider/UserContextProvider";
 
 const title = "Наши рестораны";
 
 export const App = () => {
   return (
-    <Layout>
-      <RestaurantsPage restaurants={restaurants} title={title} />
-    </Layout>
+    <UserContextProvider>
+      <ThemeContextProvider>
+        <Layout>
+          <RestaurantsPage restaurants={restaurants} title={title} />
+        </Layout>
+      </ThemeContextProvider>
+    </UserContextProvider>
   );
 };
