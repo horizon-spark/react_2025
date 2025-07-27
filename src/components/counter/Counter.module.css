@@ -1,8 +1,3 @@
-.increment:hover {
-  background-color: rgb(82, 184, 82);
-  transition: 0.5s;
-}
-.decrement:hover {
-  background-color: rgb(158, 39, 39);
-  transition: 0.5s;
+.button {
+  padding: 0.3rem 0.5rem;
 }

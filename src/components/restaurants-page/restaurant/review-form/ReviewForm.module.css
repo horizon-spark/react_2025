@@ -1,12 +1,12 @@
 .formHeader {
   margin-bottom: 3rem;
+  padding-top: 1rem;
   font-size: 1.5rem;
   text-align: center;
 }
 .reviewForm {
   width: 50rem;
   margin: auto;
-  margin-top: 5rem;
   padding: 2rem 0rem;
   border-top: 1px solid black;
 }
@@ -32,9 +32,6 @@
 .clearButton {
   text-align: right;
   margin-left: 50%;
+  padding: 0.2rem;
   font-size: 0.9rem;
-  transition: 0.5s;
-}
-.clearButton:hover {
-  background-color: rgb(158, 39, 39);
 }
