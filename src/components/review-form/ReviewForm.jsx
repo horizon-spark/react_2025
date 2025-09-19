@@ -1,10 +1,10 @@
 import classNames from "classnames";
-import { Counter } from "../../../counter/Counter";
+import { Counter } from "../counter/Counter";
 import { useForm } from "./useForm";
-import { useTheme } from "../../../theme-context-provider/useTheme";
+import { useTheme } from "../theme-context-provider/useTheme";
 
 import styles from "./ReviewForm.module.css";
-import { Button } from "../../../button/Button";
+import { Button } from "../button/Button";
 
 const MIN_REVIEW_RATE = 1;
 const MAX_REVIEW_RATE = 5;

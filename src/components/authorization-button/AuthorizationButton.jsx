@@ -1,4 +1,4 @@
-import { useAuthorization } from "../../user-context-provider/useAuthorization";
+import { useAuthorization } from "../user-context-provider/useAuthorization";
 
 import style from "./AuthorizationButton.module.css";
 

@@ -1,42 +1,43 @@
 import { useState } from "react";
-import { Tab } from "./tab/Tab";
-import { Restaurant } from "./restaurant/Restaurant";
-import { ProgressBar } from "./progress-bar/ProgressBar";
+import { ProgressBar } from "../progress-bar/ProgressBar";
+import { title } from "../app/App";
 
 import styles from "./RestaurantPage.module.css";
+import { TabContainer } from "../tab/TabContainer";
+import { RestaurantContainer } from "../restaurant/RestaurantContainer";
+import { Cart } from "../cart/cart";
+import { useAuthorization } from "../user-context-provider/useAuthorization";
 
-export const RestaurantsPage = ({ restaurants, title }) => {
+export const RestaurantsPage = ({ restaurantsIds }) => {
   const [activeRestaurantId, setActiveRestaurantId] = useState(
-    restaurants[0].id
+    restaurantsIds[0]
   );
-
-  const activeRestaurant = restaurants.find(
-    ({ id }) => id === activeRestaurantId
-  );
-
-  const handleActiveRestaurantClick = (id) => {
-    if (activeRestaurantId === id) return;
-
-    setActiveRestaurantId(id);
-  };
+  const { isAuthorized } = useAuthorization();
 
   return (
     <div>
       <ProgressBar />
       <h1 className={styles.title}>{title}</h1>
       <div className={styles.tabs}>
-        {restaurants.map(({ name, id, menu }) =>
-          menu.length ? (
-            <Tab
-              key={id}
-              title={name}
-              onClick={() => handleActiveRestaurantClick(id)}
-              isActive={id === activeRestaurantId}
-            />
-          ) : null
-        )}
+        {restaurantsIds.map((id) => (
+          <TabContainer
+            key={id}
+            restaurantId={id}
+            onClick={() => setActiveRestaurantId(id)}
+            isActive={id === activeRestaurantId}
+          />
+        ))}
       </div>
-      <Restaurant key={activeRestaurant.id} restaurant={activeRestaurant} />
+      <RestaurantContainer
+        key={activeRestaurantId}
+        restaurantId={activeRestaurantId}
+      />
+      {isAuthorized ? (
+        <div>
+          <div className={styles.cartTitle}>Корзина</div>
+          <Cart />
+        </div>
+      ) : null}
     </div>
   );
 };

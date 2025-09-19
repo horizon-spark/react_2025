@@ -1,0 +1,10 @@
+.dishElement {
+  padding: 0.4rem 0rem;
+}
+.dishName {
+  text-align: left;
+  float: left;
+}
+.dishAmount {
+  text-align: right;
+}

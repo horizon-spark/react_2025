@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { useTheme } from "../../theme-context-provider/useTheme";
-
+import { useTheme } from "../theme-context-provider/useTheme";
 import styles from "./ToggleThemeButton.module.css";
 
 export const ToggleThemeButton = () => {
