@@ -1,6 +1,4 @@
 import { Layout } from "../layout/Layout";
-import { RestaurantsPage } from "../restaurants-page/RestaurantsPage";
-import { restaurants } from "../../constants/mock";
 
 import { ThemeContextProvider } from "../theme-context-provider/ThemeContextProvider";
 import { UserContextProvider } from "../user-context-provider/UserContextProvider";
@@ -10,8 +8,8 @@ import { store } from "../../redux/store";
 
 import "./reset.css";
 import "./app.css";
-
-const title = "Наши рестораны";
+import { RestaurantsPageContainer } from "../restaurants-page/RestaurantsPageContainer";
+export const title = "Наши рестораны";
 
 export const App = () => {
   return (
@@ -19,7 +17,7 @@ export const App = () => {
       <UserContextProvider>
         <ThemeContextProvider>
           <Layout>
-            <RestaurantsPage restaurants={restaurants} title={title} />
+            <RestaurantsPageContainer />
           </Layout>
         </ThemeContextProvider>
       </UserContextProvider>
