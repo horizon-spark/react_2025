@@ -1,5 +1,5 @@
 import { Button } from "../button/Button";
-import { useAuthorization } from "../../user-context-provider/useAuthorization";
+import { useAuthorization } from "../user-context-provider/useAuthorization";
 
 import style from "../Header.module.css";
 
