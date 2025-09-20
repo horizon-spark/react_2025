@@ -1,7 +1,7 @@
-import { Button } from "../../button/Button";
-import { useTheme } from "../../theme-context-provider/useTheme";
+import { Button } from "../button/Button";
+import { useTheme } from "../theme-context-provider/useTheme";
 
-import styles from "../Header.module.css";
+import styles from "../header/Header.module.css";
 
 export const ToggleThemeButton = () => {
   const { theme, toggleTheme } = useTheme();
