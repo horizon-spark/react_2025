@@ -1,4 +1,4 @@
-import { Button } from "../../button/Button";
+import { Button } from "../button/Button";
 
 import styles from "./Tab.module.css";
 

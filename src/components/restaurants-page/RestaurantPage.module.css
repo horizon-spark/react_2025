@@ -10,3 +10,11 @@
   text-align: center;
   height: 5rem;
 }
+.cartTitle {
+  margin: auto;
+  width: 50rem;
+  padding: 3rem 0rem;
+  font-size: 1.5rem;
+  text-align: center;
+  border-top: 1px solid black;
+}

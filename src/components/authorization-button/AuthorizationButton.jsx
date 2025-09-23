@@ -1,7 +1,7 @@
-import { Button } from "../../button/Button";
-import { useAuthorization } from "../../user-context-provider/useAuthorization";
+import { Button } from "../button/Button";
+import { useAuthorization } from "../user-context-provider/useAuthorization";
 
-import style from "../Header.module.css";
+import style from "../header/Header.module.css";
 
 export const AuthorizationButton = () => {
   const { isAuthorized, logIn, logOut } = useAuthorization();
