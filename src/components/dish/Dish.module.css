@@ -1,0 +1,27 @@
+.dishCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+.dishName {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-top: 3rem;
+}
+.dishInfo {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+}
+.dishText {
+  font-size: 2rem;
+}
+.dishListItem {
+  margin: 0.5rem 1rem;
+  font-size: 1.5rem;
+  font-style: italic;
+}
+.dishListItem::marker {
+  content: "- ";
+}
