@@ -1,11 +1,13 @@
 import { useSelector } from "react-redux";
 import { selectRestaurantById } from "../../redux/entities/restaurants/slice";
 import { Tab } from "./Tab";
+import { Link, useNavigate } from "react-router";
 
-export const TabContainer = ({ restaurantId, onClick, isActive }) => {
+export const TabContainer = ({ restaurantId }) => {
   const restaurant = useSelector((state) =>
-    selectRestaurantById(state, restaurantId)
+    selectRestaurantById(state, restaurantId),
   );
+  const navigate = useNavigate();
 
   if (!restaurant) {
     return null;
@@ -15,8 +17,9 @@ export const TabContainer = ({ restaurantId, onClick, isActive }) => {
     <Tab
       key={restaurantId}
       title={restaurant.name}
-      onClick={onClick}
-      isActive={isActive}
+      onClick={() => {
+        navigate(`${restaurantId}/menu`);
+      }}
     />
   );
 };
